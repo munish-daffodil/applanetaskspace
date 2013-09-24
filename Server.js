@@ -39,6 +39,8 @@ app.use(function (req, res, next) {
     }
 });
 
+//TODO all calls should be POST type , but for making easier to test we have currently do it both GET and POST
+
 app.all("/login", function (req, res) {
     UserService.login(req, function (err, data) {
         writeJSONResponse(res, (err || data));

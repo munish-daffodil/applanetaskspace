@@ -1,0 +1,59 @@
+How to use
+
+1. Install MongoDB and NodeJS
+2. Run MongoDB on local server
+3. Configuration of local database url is in lib/MongoDBManager.js
+4. Run Server.js through Node, it will run on 8089 port.
+5. Run below mentioned services.
+
+
+Signup
+    http://localhost:8089/signup?emailid=rohit.bansal@daffodilsw.com&password=xyz&name=Rohit Bansal
+
+Login
+    http://localhost:8089/login?emailid=rohit.bansal@daffodilsw.com&password=xyz
+
+
+// Please copy access_token got from login service,  to use in below services
+
+Create Task
+    http://localhost:8089/createtask?shortdescription=First task&access_token=5241a122ba986fdc1a000004
+
+// Please Note _id of task to use as taskid in next services
+
+Get tasks
+    http://localhost:8089/tasks?access_token=5241a122ba986fdc1a000004
+
+Update task
+    http://localhost:8089/updatetask?shortdescription=First task updated&owner=nitin.goyal@daffodilsw.com&access_token=5241a122ba986fdc1a000004&taskid=5241a147ba986fdc1a000005
+
+Get tasks
+    http://localhost:8089/tasks?access_token=5241a122ba986fdc1a000004
+
+Remove current user as a watch from specified task
+    http://localhost:8089/removewatch?access_token=5241a122ba986fdc1a000004&taskid=5241a147ba986fdc1a000005
+
+Get tasks
+    http://localhost:8089/tasks?access_token=5241a122ba986fdc1a000004
+
+Add watch
+    http://localhost:8089/addwatch?access_token=5241a122ba986fdc1a000004&taskid=5241a147ba986fdc1a000005
+
+Get tasks
+    http://localhost:8089/tasks?access_token=5241a122ba986fdc1a000004
+
+Add comment
+    http://localhost:8089/addcomment?access_token=5241a122ba986fdc1a000004&taskid=5241a147ba986fdc1a000005&comment=Excellent
+    http://localhost:8089/addcomment?access_token=5241a122ba986fdc1a000004&taskid=5241a147ba986fdc1a000005&comment=Very Good
+
+// Note commentid to remove comment in next services
+
+Get tasks
+    http://localhost:8089/tasks?access_token=5241a122ba986fdc1a000004
+
+Remove comment
+    http://localhost:8089/removecomment?commentid=5241a319ba986fdc1a000007&access_token=5241a122ba986fdc1a000004&taskid=5241a147ba986fdc1a000005
+
+Get tasks
+    http://localhost:8089/tasks?access_token=5241a122ba986fdc1a000004
+
