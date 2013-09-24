@@ -3,7 +3,6 @@ var express = require('express');
 var app = express();
 var urlParser = require('url');
 var Constants = require("./lib/Constants.js");
-var DataBaseManager = require("./lib/MongoDBManager.js");
 var UserService = require("./lib/UserService.js");
 var TaskService = require("./lib/TaskService.js");
 var AppError = require("./lib/AppError.js");
