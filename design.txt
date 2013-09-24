@@ -1,0 +1,74 @@
+login
+    emailid
+    password
+logout
+signup
+    password
+    emailid  : primary
+contacts
+    emailid
+    contactemailid
+tasks
+    task
+    description
+    owner : email
+    tags
+    watch [] : emails
+    priority
+    status : object
+        date
+        status
+            New
+            InProgress
+            Completed
+            Rejected
+    comments
+        emailid
+        comment
+        createdon
+createtask
+updatetask
+removetask
+addcomment
+removecomment
+mytasks
+    watch = _CurrentUser  : default filter
+    add filter
+        owner : me
+        owner : contact
+        status : inprogress : new
+    order by
+        priority
+mycontacts
+
+when a comment is added : email to all watchers
+when status got changes : email to all watchers
+By default : owner will be a watcher
+Current User will nt receive email for his action
+
+
+emailid validate
+new user if owner changes
+
+
+=========================
+services
+http://localhost:8089/login?emailid=rohit&password=daffodil
+http://localhost:8089/signup?emailid=rohit&password=daffodil&name=Rohit Bansal
+http://localhost:8089/createtask?task=ThirdTask&access_token=1
+http://localhost:8089/updatetask?task=SecondTaskupdatess&owner=Pawan&access_token=1&_id=5241695dff5686c412000001
+http://localhost:8089/addcomment?comment=Comment1&owner=Pawan&access_token=1&_id=524176b1cfd85e2419000001
+http://localhost:8089/removecomment?commentid=1&access_token=1&taskid=524176b1cfd85e2419000001
+http://localhost:8089/addwatch?access_token=1&taskid=524176b1cfd85e2419000001
+http://localhost:8089/removewatch?access_token=1&taskid=524176b1cfd85e2419000001
+
+
+
+
+
+
+
+
+
+
+
