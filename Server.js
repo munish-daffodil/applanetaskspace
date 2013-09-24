@@ -14,8 +14,10 @@ process.on('uncaughtException', function (err) {
 });
 
 // filters
+//add express body parser
 app.use(express.bodyParser());
 
+//check if user is login
 app.use(function (req, res, next) {
     var url = urlParser.parse(req.url, true);
     if (url.pathname == "/login" || url.pathname == "/signup") {
@@ -38,9 +40,7 @@ app.use(function (req, res, next) {
 });
 
 app.all("/login", function (req, res) {
-
     UserService.login(req, function (err, data) {
-
         writeJSONResponse(res, (err || data));
     });
 });
