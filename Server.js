@@ -10,6 +10,7 @@ var AppError = require("./lib/AppError.js");
 
 
 process.on('uncaughtException', function (err) {
+    //TODO handling pending
     console.log("Uncaught Exception : " + err.stack);
 });
 
